@@ -13,7 +13,7 @@ model = BertForSequenceClassification.from_pretrained('bert-base-uncased', num_l
 
 # Assume you have a dataset with two lists: texts (your tweets) and multi-labels
 texts = ["tweet1", "tweet2", "tweet3", "tweet4"]
-labels = [[1, 0, 0, 0, 0, 0, 0, 0], [0, 1, 0, 0, 0, 0, 0, 0], [0, 0, 1, 0, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0, 0]]
+labels = [[1, 0], [0, 1], [0, 0]] # [1, 0] for misandrist, [0, 1] for misogynist, [0, 0] for neither.
 
 # Tokenize the dataset
 inputs = tokenizer(texts, padding=True, truncation=True, max_length=512, return_tensors='pt')
